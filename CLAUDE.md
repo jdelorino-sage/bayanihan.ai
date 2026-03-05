@@ -1,13 +1,13 @@
-# CLAUDE.md — LegalPh.AI
+# CLAUDE.md — Bayanihan.AI
 
 > Claude Code reads this file automatically at the start of every session.
 > Last updated: March 2026
 
 ## Project Overview
 
-**LegalPh.AI** is an AI-powered legal technology platform for the Philippine legal ecosystem. It provides AI legal research, document drafting, notarial compliance tools, and citizen legal navigation services.
+**Bayanihan.AI** is an AI-powered legal technology platform for the Philippine legal ecosystem. It provides AI legal research, document drafting, notarial compliance tools, and citizen legal navigation services.
 
-**Domain:** legalph.ai
+**Domain:** bayanihan.io
 **Builder:** Solo developer (Jun) + Claude AI. No team, no co-founders, no hires. All architecture and code designed for one-person operation with AI assistance.
 
 ## Tech Stack
@@ -25,7 +25,7 @@
 ## Repository Structure
 
 ```
-legalph-ai/
+bayanihan-ai/
 ├── CLAUDE.md                  # This file — Claude Code context
 ├── ARCHITECTURE.md            # Detailed technical architecture
 ├── README.md
@@ -136,7 +136,7 @@ Index type: HNSW with cosine distance (`<=>` operator)
 
 ```bash
 # Neon
-DATABASE_URL=postgresql://...@ep-xxx.ap-southeast-1.aws.neon.tech/legalph?sslmode=require
+DATABASE_URL=postgresql://...@ep-xxx.ap-southeast-1.aws.neon.tech/bayanihan?sslmode=require
 DATABASE_URL_UNPOOLED=postgresql://...  # For migrations
 
 # AI APIs
@@ -156,7 +156,7 @@ REDIS_URL=redis://redis.railway.internal:6379
 
 # App
 NODE_ENV=production
-NEXT_PUBLIC_API_URL=https://api.legalph.ai
+NEXT_PUBLIC_API_URL=https://api.bayanihan.io
 ```
 
 ## Key Commands
