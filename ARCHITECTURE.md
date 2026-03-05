@@ -1,6 +1,6 @@
-# ARCHITECTURE.md — LegalPh.AI Technical Architecture
+# ARCHITECTURE.md — Bayanihan.AI Technical Architecture
 
-> Detailed technical architecture for the LegalPh.AI platform.
+> Detailed technical architecture for the Bayanihan.AI platform.
 > For quick reference, see [CLAUDE.md](./CLAUDE.md).
 
 ## System Architecture
@@ -127,7 +127,7 @@
 
 [[redirects]]
   from = "/api/v1/*"
-  to = "https://api.legalph.ai/v1/:splat"
+  to = "https://api.bayanihan.io/v1/:splat"
   status = 200
   force = true
 ```
@@ -145,7 +145,7 @@ Primary entry point for all client requests.
 - Rate limiting (Redis-backed, per-user tier)
 - API versioning (`/v1/`)
 - Request logging and metrics
-- CORS configuration for legalph.ai
+- CORS configuration for bayanihan.io
 
 Rate limits by tier:
 | Tier | Requests/min | AI Queries/day |
