@@ -1,0 +1,4 @@
+-- Full schema reference for Bayanihan.AI
+-- This file is auto-generated from migrations and serves as documentation.
+-- Do NOT run this directly. Use: npx dbmate up
+-- See: database/migrations/ for individual migration files.
