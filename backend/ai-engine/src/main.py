@@ -1,5 +1,6 @@
+import os
+
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 
 from src.rag.router import router as rag_router
 
@@ -9,13 +10,8 @@ app = FastAPI(
     description="RAG pipeline and AI orchestration for Philippine legal research",
 )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# No CORS middleware — this service is internal-only via Railway private networking.
+# Only the API Gateway is publicly exposed and handles CORS.
 
 
 @app.get("/health")

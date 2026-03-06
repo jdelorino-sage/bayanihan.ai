@@ -1,3 +1,5 @@
+# Scraper Workers — runs as Railway cron job, no HTTP port exposed.
+# Invoked on schedule: daily 2-3 AM PHT, weekly Monday.
 FROM python:3.12-slim
 
 WORKDIR /app

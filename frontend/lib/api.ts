@@ -11,18 +11,19 @@ async function request<T>(path: string, options?: RequestInit): Promise<ApiRespo
     ...options,
   });
 
+  const body = await res.json().catch(() => null);
+
   if (!res.ok) {
-    const error = await res.json().catch(() => ({ message: "Request failed" }));
     return {
       success: false,
-      error: {
+      error: body?.error ?? {
         code: `HTTP_${res.status}`,
-        message: error.message || res.statusText,
+        message: res.statusText || "Request failed",
       },
     };
   }
 
-  return res.json();
+  return body as ApiResponse<T>;
 }
 
 export const api = {

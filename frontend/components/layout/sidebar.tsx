@@ -3,14 +3,23 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import {
+  LayoutDashboard,
+  Search,
+  FileText,
+  Stamp,
+  Briefcase,
+  Settings,
+  type LucideIcon,
+} from "lucide-react";
 
-const navItems = [
-  { href: "/dashboard", label: "Dashboard", icon: "LayoutDashboard" },
-  { href: "/dashboard/research", label: "AI Research", icon: "Search" },
-  { href: "/dashboard/drafting", label: "Drafting", icon: "FileText" },
-  { href: "/dashboard/notarial", label: "Notarial", icon: "Stamp" },
-  { href: "/dashboard/cases", label: "Cases", icon: "Briefcase" },
-  { href: "/dashboard/settings", label: "Settings", icon: "Settings" },
+const navItems: { href: string; label: string; icon: LucideIcon }[] = [
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/dashboard/research", label: "AI Research", icon: Search },
+  { href: "/dashboard/drafting", label: "Drafting", icon: FileText },
+  { href: "/dashboard/notarial", label: "Notarial", icon: Stamp },
+  { href: "/dashboard/cases", label: "Cases", icon: Briefcase },
+  { href: "/dashboard/settings", label: "Settings", icon: Settings },
 ];
 
 export function Sidebar() {
@@ -27,6 +36,7 @@ export function Sidebar() {
       <nav className="flex-1 px-4 space-y-1">
         {navItems.map((item) => {
           const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
+          const Icon = item.icon;
           return (
             <Link
               key={item.href}
@@ -38,6 +48,7 @@ export function Sidebar() {
                   : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
               )}
             >
+              <Icon className="h-4 w-4" />
               <span>{item.label}</span>
             </Link>
           );
